@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} Record Page {%endblock%}
+{% block body %}
+<div class="row ">
+    <div class=" col-sm-12 mt-5 ">
+    <a href="{% url 'mainpanel' %}"><button class="btn btn-primary float-start">Back</button> </a>
+     </div>
+    <div class="col-sm-12 text-center">
+        <h1>My Profile</h1><br><hr>
+        <table class="table " >
+            <tbody>
+            <tr>
+                <td class="fw-bold">Name</td><td class="text-uppercase">{{flt.name}}</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">Email</td><td>{{flt.username}}</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">Qualification</td><td class="text-uppercase">{{flt.qualification}}</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">Contact</td><td class="text-uppercase">{{flt.mobile}}</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">Gender</td><td class="text-uppercase">{{flt.gender}}</td>
+            </tr>
+            <tr>
+                <td class="fw-bold">DOB</td><td class="text-uppercase">{{flt.dob}}</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

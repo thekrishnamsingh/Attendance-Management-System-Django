@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Record Page {%endblock%}
+{% block body %}
+<div class="row ">
+    <div class="col-sm-4 mt-5">
+    <a href="{% url 'mainpanel' %}"><button class="btn btn-primary float-start">Back</button> </a>
+     </div>
+    <div class="col-sm-8 mt-5">
+        <h1>All Students Record</h1>
+    </div>
+<hr>
+    <table class="table table-bordered text-center">
+        <tr>
+            <th>Name</th><th>Roll No</th><th>Course</th><th>Branch</th>
+            <th>Sem</th><th>Present</th><th>Absent</th>
+        </tr>
+        {% for s in stu %}
+        <tr>
+            <td>{{s.name}}</td>
+            <td>{{s.rollno}}</td>
+            <td>{{s.course}}</td>
+            <td>{{s.branch}}</td>
+            <td>{{s.semester}}</td>
+            <td>{{s.present}}</td>
+            <td>{{s.absent}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

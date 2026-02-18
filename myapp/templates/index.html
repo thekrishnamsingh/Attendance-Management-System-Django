@@ -1,0 +1,64 @@
+   {% extends 'base.html' %}
+   {%load static%}
+   {%block title%}minor project {%endblock%}
+   
+
+   {% block body%}
+<div class="row mt-2">
+    <div class="col-3 float-left" >
+
+        <img src="{% static 'image/c.jpg' %}" alt="" height="70px" style="align:right;"align="right"/>
+
+    </div>
+   <div class="col-sm-9 float-right">
+        <h1 style="margin-left:25px;">Government Polytechnic Aurai</h1>
+   </div>
+</div>
+
+<div class="row mt-5">
+    <div class='col-sm-6  float-left'>
+        <img class='ms-5' src="{% static 'image/gp.jpg' %}" alt="" height="440px"/>
+    </div>
+    <div class="col-sm-6 float-right">
+        <div style="margin-right:50px; border:3px solid green; border-radius:50px; height:450px; width:60%; float:right; text-align:center;">
+           <div style="font-size:100px; margin-top:40px;"><h2>User LogIn!</h2></div>
+           <div style=" font-size:20px;  margin:50px; margin-bottom: 0px;; margin-top:70px;">
+                {% if err %}
+        <div class="row text-center text-danger">
+            <h3>{{err}}</h3>
+        </div>
+        {% endif %}
+        {% if msg %}
+        <div class="row text-center text-success">
+            {{msg}}
+        </div>
+        {% endif %}
+                <form action='{% url 'login' %}' method='post'>
+                    {% csrf_token %}
+                    <table>
+                    <tr>
+
+                        <td>
+                        <input type="email" name='user'  placeholder="User Id" require="true" style="height:40px; width:300px;"/>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>
+                        <input type="password" name='password' placeholder="password" require="true" style="height:40px; width:300px; margin-top:20px;"/>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <input type="submit" value="LOGIN" style="height:40px; width:300px; margin-top:20px; border:0px solid ; background-color:green; color:white;"/>
+                            </td>
+                            </tr>
+                    </table>
+                </form>
+           </br>
+               <font style="font-size:25px; margin-top:10px;"><h5> New Registration ? <a href="{% url 'registration' %}" style="text-decoration:none;">Click here</a></h5></font>
+            </div>
+        </div>
+    </div>
+   {%endblock%}
+
+

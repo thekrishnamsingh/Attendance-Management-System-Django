@@ -1,0 +1,65 @@
+{% extends 'base.html'%}
+  {% load static%}
+ {% block title%} {%endblock %}
+
+ {%block body%}
+    <div class="row">
+        <div class="col-sm-2 float-start">
+           <a href="{% url 'index' %}"> <button type="back" class='m-5 btn btn-primary'>Back</button></a>
+        </div>
+        <div class="col-10 float-end " >
+            <h1 class="mt-5" style=";margin-left:250px;">Faculty Registration</h1>
+        </div>
+    </div>
+        {% if err %}
+        <div class="row">
+            <div class="text-danger m-3 text-center">
+                <h3>{{err}}</h3> 
+             </div>
+        </div>
+        {% endif %}
+    <div class="row">
+        <div class="col-sm-12">
+            <form action="{% url 'registration' %}" method='post'>
+                {% csrf_token %}
+                    <table style="margin-left:400px; margin-bottom:30px;">
+                        <tr>
+                            <td><input type="name" style="padding-right:400px;" name='name' required="true" placeholder="Full Name"/> </td>
+                        </tr>
+                        <tr>
+                             <td>
+                                <select name="gen" style="padding:4px; padding-right:450px; ">
+                                    <option value="" disabled selected hidden>Select geneder</option>
+                                    <option name="gen" >Male</option>
+                                    <option name="gen">Fmale</option>
+                                </select>
+                             </td>
+                        </tr>
+                    <tr>
+                        <td><input type="text" style="padding-right:400px;" name='mobile' required="true" placeholder="Mobile Number"/></td>
+                    </tr>
+                        <tr>
+                            <td><input type="date" style="padding:4px; padding-right:440px;" name='dob' required="true" placeholder="Date of Birth"/> </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" style="padding-right:400px;" name='quali' required="true" placeholder="Qualification"/> </td>
+                        </tr>
+                        <tr>
+                            <td><input type="email" style="padding-right:400px;" name='email' required="true" placeholder="Email"/> </td>
+                        </tr>
+                        <tr>
+                            <td><input type="password" style="padding-right:400px;" name='password' required="true" placeholder="Password"/> </td>
+                        </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Register" class="btn mt-3" style="margin-left:110px; color:white;background-color:green; padding-left:120px;padding-right:120px;"/>
+                      </td>
+                  </tr>
+                </table>
+                </form>
+        </div>
+    </div>
+    
+
+ {%endblock%}
+ 

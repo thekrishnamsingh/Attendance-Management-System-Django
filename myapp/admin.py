@@ -3,6 +3,7 @@ from .models import Student,Faculty
 
 
 # Register your models here.
+#admin.site.register(Student)
 
 class AdminStudent(admin.ModelAdmin):
     list_display=['name','rollno','course','teacher','semester','branch','present','absent','sr']

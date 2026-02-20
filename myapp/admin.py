@@ -7,7 +7,6 @@ from .models import Student,Faculty
 #admin.site.register(Faculty)
 #admin.site.register(Student)
 #admin.site.register(Faculty)
-#admin.site.register(Student)
 
 class AdminStudent(admin.ModelAdmin):
     list_display=['name','rollno','course','teacher','semester','branch','present','absent','sr']

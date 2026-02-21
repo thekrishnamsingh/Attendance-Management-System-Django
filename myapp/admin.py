@@ -4,7 +4,8 @@ from .models import Student,Faculty
 
 # Register your models here.
 #admin.site.register(Student)
-#admin.site.register(Faculty)
+#admin.site.register
+
 
 
 class AdminStudent(admin.ModelAdmin):

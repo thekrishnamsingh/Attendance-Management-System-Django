@@ -3,7 +3,7 @@ from .models import Student,Faculty
 
 
 # Register your models here.
-#admin.site.register(Student)
+
 
 
 

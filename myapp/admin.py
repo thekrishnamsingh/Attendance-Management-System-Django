@@ -9,3 +9,5 @@ class AdminStudent(admin.ModelAdmin):
 class AdminFaculty(admin.ModelAdmin):
     list_display=['name','username','password','dob','qualification','mobile','gender']
     
+admin.site.register(Student,AdminStudent)
+admin.site.register(Faculty,AdminFaculty)
